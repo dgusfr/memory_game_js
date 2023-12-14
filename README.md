@@ -1,6 +1,6 @@
-# Jogo da Memória - Projeto JavaScript
+# Jogo da Memória
 
-Este é um simples jogo da memória desenvolvido em JavaScript e HTML. O jogo apresenta cartas com imagens de animais, e o jogador deve encontrar todos os pares correspondentes.
+#### Este é um simples jogo da memória desenvolvido em JavaScript e HTML. O jogo apresenta cartas com imagens de animais, e o jogador deve encontrar todos os pares correspondentes.
 
 <div align="center">
   <img src="img/proj1.png" alt="Imagem do Projeto">
