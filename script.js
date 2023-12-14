@@ -10,20 +10,19 @@ let interval;
 let firstCard = false;
 let secondCard = false;
 
-
 const items = [
-  { name: "bee", image: "bee.png" },
-  { name: "crocodile", image: "crocodile.png" },
-  { name: "macaw", image: "macaw.png" },
-  { name: "gorilla", image: "gorilla.png" },
-  { name: "tiger", image: "tiger.png" },
-  { name: "monkey", image: "monkey.png" },
-  { name: "chameleon", image: "chameleon.png" },
-  { name: "piranha", image: "piranha.png" },
-  { name: "anaconda", image: "anaconda.png" },
-  { name: "sloth", image: "sloth.png" },
-  { name: "cockatoo", image: "cockatoo.png" },
-  { name: "toucan", image: "toucan.png" },
+  { name: "bee", image: "img/bee.png" },
+  { name: "crocodile", image: "img/crocodile.png" },
+  { name: "macaw", image: "img/macaw.png" },
+  { name: "gorilla", image: "img/gorilla.png" },
+  { name: "tiger", image: "img/tiger.png" },
+  { name: "monkey", image: "img/monkey.png" },
+  { name: "chameleon", image: "img/chameleon.png" },
+  { name: "piranha", image: "img/piranha.png" },
+  { name: "anaconda", image: "img/anaconda.png" },
+  { name: "sloth", image: "img/sloth.png" },
+  { name: "cockatoo", image: "img/cockatoo.png" },
+  { name: "toucan", image: "img/toucan.png" },
 ];
 
 //Tempo inicial
@@ -33,7 +32,7 @@ let seconds = 0,
 let movesCount = 0,
   winCount = 0;
 
-//Para o cronometro 
+//Para o cronometro
 const timeGenerator = () => {
   seconds += 1;
   //conversão de hora
@@ -78,37 +77,32 @@ const matrixGenerator = (cardValues, size = 4) => {
      </div>
      `;
   }
- 
-  gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
 
+  gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
 
   cards = document.querySelectorAll(".card-container");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
-      
       if (!card.classList.contains("matched")) {
-        
         card.classList.add("flipped");
-        
+
         if (!firstCard) {
-          
           firstCard = card;
-          
+
           firstCardValue = card.getAttribute("data-card-value");
         } else {
           movesCounter();
-          
+
           secondCard = card;
           let secondCardValue = card.getAttribute("data-card-value");
           if (firstCardValue == secondCardValue) {
-            
             firstCard.classList.add("matched");
             secondCard.classList.add("matched");
-            
+
             firstCard = false;
-            
+
             winCount += 1;
-            
+
             if (winCount == Math.floor(cardValues.length / 2)) {
               result.innerHTML = `<h2>Você Ganhou!</h2>
             <h4>Moves: ${movesCount}</h4>`;
@@ -152,7 +146,6 @@ stopButton.addEventListener(
     clearInterval(interval);
   })
 );
-
 
 const initializer = () => {
   result.innerText = "";
