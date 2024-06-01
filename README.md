@@ -1,6 +1,6 @@
 # Jogo da Memória
 
-## Visual do Projeto
+## Interface do Projeto
 
 <div align="center">
   <img src="img/proj1.png" alt="Imagem do Projeto" width="400">
